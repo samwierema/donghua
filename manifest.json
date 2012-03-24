@@ -1,0 +1,18 @@
+{
+	"BundleType": "Application",
+	"AppIcon": {
+		"36x18": "tutorial.png"
+	},
+	"AppName": {
+		"en": "donghua"
+	},
+	"SupportedLanguages": [
+		"en"
+	],
+	"RequiredPermissions": [
+		"http://ajax.googleapis.com",
+		"http://lab.wiewer.nl",
+		"http://i.imgur.com",
+		"http://imgur.com"
+	]
+}
