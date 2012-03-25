@@ -42,10 +42,23 @@ foreach ($urls as $url) {
     
     $track = '';
     
+    $sort = '&sort=';
+    switch (mt_rand(1,3)) {
+        case 1:
+            $sort .= 'artist_familiarity-desc';
+            break;
+        case 2:
+            $sort .= 'song_hotttnesss-desc';
+            break;
+        case 3:
+            $sort .= 'danceability-desc';
+            break;
+    }
+    
     $i = 0;
     while ($i < 5) {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $echonest_url .'&min_tempo='. $min_tempo .'&max_tempo='. $max_tempo);
+        curl_setopt($ch, CURLOPT_URL, $echonest_url .'&min_tempo='. $min_tempo .'&max_tempo='. $max_tempo . $sort);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);
         if (empty($result)) {
