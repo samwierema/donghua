@@ -53,8 +53,8 @@ foreach ($urls as $url) {
         }
         $result = json_decode($result, true);
         if (empty($result['response']['songs'])) {
-            $min_tempo = ($min_tempo / 2);
-            $max_tempo = ($max_tempo * 2);
+            $min_tempo = ($min_tempo * 2);
+            $max_tempo = $min_tempo * 1.1;
             $i++;
             usleep(500000);
             continue;
