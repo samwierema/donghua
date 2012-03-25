@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>Dònghuà (动画)</title>
-	<link rel="stylesheet" href="sp://import/css/eve.css">
-	<link rel="stylesheet" href="donghua.css">
+	<link rel="stylesheet" type="text/css" href="sp://import/css/eve.css">
+	<link rel="stylesheet" type="text/css" href="sp://import/css/api.css">	
+	<link rel="stylesheet" type="text/css" href="donghua.css">
 </head>
 <body onload="sp = getSpotifyApi(1); donghua = sp.require('donghua'); donghua.init();">
   <div id="content">
@@ -12,6 +13,15 @@
       <div id="spinner"></div>
       <h1>动画</h1>
       <p>Dònghuà is loading for you</p>
+    </div>
+    <div id="fullscreen">
+      <a class="sp-button">Return to main screen</a>
+    </div>
+    <div id="list">
+      <h1>动画</h1>
+    </div>
+    <div id="footer">
+      Made by <a href="https://twitter.com/#!/marcelcorso">Marcel Corso</a> and <a href="https://twitter.com/#!/samwierema">Sam Wierema</a><br /><br />
     </div>
   </div>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
