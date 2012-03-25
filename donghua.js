@@ -13,21 +13,28 @@ var gifs = [],
 function init() {
   getList();
 	
-	sp.core.addEventListener("argumentsChanged", argumentsChanged);
+  sp.core.addEventListener("argumentsChanged", argumentsChanged);
 	
-	player.observe(models.EVENT.CHANGE, playerStateChanged);
+  var i;
+  for(i in models.EVENT) {
+    var e = models.EVENT[i];
+    player.observe(e, playerStateChanged);
+  }
 }
 
 function playerStateChanged(ev) {
-  // showGif(position);
+  console.debug('playerStateChanged');
   var position = -1;
   var currentUri = player.track.data.uri;
-  for (var i = 0; i < list.length; i++) {
-    if(currentUri == list[i].track_id) 
+  for (var i = 0; i < playlist.tracks.length; i++) {
+    if(currentUri == playlist.tracks[i].uri) 
       position = i;
   }
-  showGif(position)
+  if(position > -1) {
+    showGif(position);
+  }
 }
+
 
 function argumentsChanged() {
   var args = sp.core.getArguments();
